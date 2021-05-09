@@ -1,8 +1,8 @@
 <template>
   <v-app :class="{ acrylic }">
-    <app-bar v-model="drawer" />
+    <app-bar />
     <client-only>
-      <v-navigation-drawer v-model="drawer" app>
+      <v-navigation-drawer v-model="main" app>
         <app-nav />
       </v-navigation-drawer>
       <app-settings-drawer />
@@ -17,24 +17,14 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { get } from 'vuex-pathify'
-import AppBar from '~/components/app/AppBar.vue'
-import AppFooter from '~/components/app/AppFooter.vue'
-import AppBg from '~/components/app/AppBg.vue'
-import AppNav from '~/components/app/AppNav.vue'
-import AppSettingsDrawer from '~/components/app/AppSettingsDrawer.vue'
+import { get, sync } from 'vuex-pathify'
 
 export default Vue.extend({
   name: 'App',
-  components: { AppBg, AppBar, AppFooter, AppNav, AppSettingsDrawer },
-  data() {
-    return {
-      drawer: null
-    }
-  },
   computed: {
-    theme: get('persist@theme'),
-    acrylic: get('persist@acrylic')
+    theme: get('local@theme'),
+    acrylic: get('local@acrylic'),
+    main: sync('drawers@main')
   },
   watch: {
     theme: {

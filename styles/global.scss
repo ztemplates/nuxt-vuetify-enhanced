@@ -1,1 +1,29 @@
-// global styles
+@import '~/styles/config.scss';
+
+@font-face {
+  font-family: Cascadia Code;
+  src: local('Cascadia Code'), local('Cascadia-Code'),
+    url(~/assets/CascadiaCode.woff2) format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $monospace-font;
+}
+
+.fill-width {
+  width: 100%;
+}
+
+.text-monospace {
+  font-family: $monospace-font !important;
+}
+
+.flex-fill-rest {
+  flex-grow: 1;
+}

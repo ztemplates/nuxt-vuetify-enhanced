@@ -1,17 +1,12 @@
 <template>
-  <div :style="{ zIndex }" class="bg"></div>
+  <div class="bg"></div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'AppBg',
-  computed: {
-    zIndex() {
-      return this.$store.state.zen ? 6 : -1
-    }
-  }
+  name: 'AppBg'
 })
 </script>
 
@@ -23,6 +18,7 @@ export default Vue.extend({
   transition: 0.1s;
   background-position: center center;
   background-size: cover;
+  z-index: -1;
 }
 
 .theme--light .bg {

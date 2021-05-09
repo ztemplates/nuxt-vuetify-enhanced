@@ -17,13 +17,11 @@
     </v-toolbar>
     <v-divider />
     <template v-if="settings">
-      <theme />
+      <app-settings-theme />
       <v-divider />
-      <editor />
+      <app-settings-storage />
       <v-divider />
-      <storage />
-      <v-divider />
-      <version />
+      <app-settings-version />
     </template>
   </v-navigation-drawer>
 </template>
@@ -32,14 +30,9 @@
 import Vue from 'vue'
 import { mdiClose } from '@mdi/js'
 import { sync } from 'vuex-pathify'
-import Theme from '~/components/app/settings/Theme.vue'
-import Editor from '~/components/app/settings/Editor.vue'
-import Storage from '~/components/app/settings/Storage.vue'
-import Version from '~/components/app/settings/Version.vue'
 
 export default Vue.extend({
   name: 'AppSettingsDrawer',
-  components: { Theme, Editor, Storage, Version },
   data() {
     return {
       mdiClose

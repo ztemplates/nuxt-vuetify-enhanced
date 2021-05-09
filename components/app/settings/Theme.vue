@@ -34,7 +34,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    theme: sync('persist@theme')
+    theme: sync('local@theme')
   }
 })
 </script>

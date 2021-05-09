@@ -3,7 +3,14 @@ import { GetterTree, ActionTree, MutationTree } from 'vuex'
 import pathify, { make } from 'vuex-pathify'
 
 export const state = () => ({
-  local: {}
+  local: {
+    theme: 0,
+    acrylic: true
+  },
+  drawers: {
+    main: false,
+    settings: false
+  }
 })
 
 type RootState = ReturnType<typeof state>
