@@ -49,6 +49,7 @@ const config: NuxtConfig = {
   plugins: [
     '~/plugins/init.ts',
     '~/plugins/persist-state.client.ts',
+    '~/plugins/theme.client.ts',
     '~/plugins/toast.client.ts'
     //
   ],
