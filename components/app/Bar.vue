@@ -11,6 +11,13 @@
       <code>SITE TITLE</code>
     </v-btn>
     <v-spacer />
+    <v-btn
+      icon
+      href="https://github.com/ztemplates/nuxt-vuetify-enhanced"
+      target="_blank"
+    >
+      <v-icon>{{ mdiGithub }}</v-icon>
+    </v-btn>
     <v-btn icon aria-label="settings" @click="settings = !settings">
       <v-icon>{{ mdiCog }}</v-icon>
     </v-btn>
@@ -19,14 +26,15 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mdiCog } from '@mdi/js'
+import { mdiCog, mdiGithub } from '@mdi/js'
 import { sync } from 'vuex-pathify'
 
 export default Vue.extend({
   name: 'App',
   data() {
     return {
-      mdiCog
+      mdiCog,
+      mdiGithub
     }
   },
   computed: {
