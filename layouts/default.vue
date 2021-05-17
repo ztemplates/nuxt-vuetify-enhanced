@@ -22,25 +22,16 @@ import { get, sync } from 'vuex-pathify'
 export default Vue.extend({
   name: 'App',
   computed: {
-    theme: get('local@theme'),
+    theme: get('theme'),
     acrylic: get('local@acrylic'),
     main: sync('drawers@main')
   },
   watch: {
     theme: {
-      immediate: true,
-      handler(val) {
-        if (val === 2) {
-          this.$vuetify.theme.dark = false
-        } else if (val === 1) {
-          this.$vuetify.theme.dark = true
-        } else if (process.client) {
-          const darkMediaQuery = window.matchMedia(
-            '(prefers-color-scheme: dark)'
-          )
-          this.$vuetify.theme.dark = darkMediaQuery.matches
-        }
-      }
+      handler() {
+        this.$vuetify.theme.dark = this.theme === 1
+      },
+      immediate: true
     }
   }
 })

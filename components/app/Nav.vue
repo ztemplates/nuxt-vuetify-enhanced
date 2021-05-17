@@ -13,15 +13,15 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import { mdiHome } from '@mdi/js'
+import { mdiHomeOutline, mdiWrenchOutline } from '@mdi/js'
 
 export default Vue.extend({
   name: 'AppNav',
   data() {
     return {
       links: [
-        { to: '/', icon: mdiHome, text: 'Home' }
-        //
+        { to: '/', icon: mdiHomeOutline, text: 'Home' },
+        { to: '/build', icon: mdiWrenchOutline, text: 'Build Info' }
       ]
     }
   }

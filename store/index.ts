@@ -10,13 +10,17 @@ export const state = () => ({
   drawers: {
     main: false,
     settings: false
-  }
+  },
+  systemTheme: 2
 })
 
 type RootState = ReturnType<typeof state>
 
 export const getters: GetterTree<RootState, RootState> = {
-  ...make.getters(state)
+  ...make.getters(state),
+  theme(state) {
+    return state.local.theme || state.systemTheme
+  }
 }
 
 export const mutations: MutationTree<RootState> = {
