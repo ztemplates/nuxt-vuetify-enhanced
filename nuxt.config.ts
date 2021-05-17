@@ -89,11 +89,6 @@ if (!process.env.VERCEL || process.env.CI) {
       })
     })
   ]
-
-  config.build!.babel = {
-    // supress babel loose warning
-    plugins: [['@babel/plugin-proposal-private-methods', { loose: true }]]
-  }
 }
 
 export default config
