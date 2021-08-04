@@ -16,7 +16,7 @@
     "core-js": "^3.16.0",
     "izitoast": "^1.4.0",
     "nuxt": "^2.15.7",
-    "vuex-pathify": "^1.4.5"
+    "vuex-pathify": "^1.5.0"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.7",
